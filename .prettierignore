@@ -1,0 +1,13 @@
+dist
+lib
+node_modules
+
+.babelrc
+.eslintrc.cjs
+.prettierrc
+package.json
+package-lock.json
+normalize.css
+tsconfig.json
+webpack.config.js
+postcss.config.js

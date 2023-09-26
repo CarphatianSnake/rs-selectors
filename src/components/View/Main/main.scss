@@ -1,0 +1,100 @@
+@import '../../../styles/variables.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.task,
+.editor {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.editor {
+  border: solid 0.625rem rgba(0, 0, 0, 0.35);
+  border-radius: 0.25rem;
+  display: flex;
+  font-family: menlo, monospace;
+
+  &_shake {
+    animation: shake 300ms infinite;
+    animation-delay: 0s, 300ms;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(0.5rem);
+  }
+  30% {
+    transform: translateX(-0.5rem);
+  }
+  50% {
+    transform: translateX(0.5rem);
+  }
+  70% {
+    transform: translateX(-0.5rem);
+  }
+  90% {
+    transform: translateX(0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.table-container {
+  margin: 0 auto 3rem;
+  perspective: 25rem;
+  position: relative;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  width: fit-content;
+}
+
+.table-wrapper {
+  margin: 0.625rem auto 0;
+  min-height: 8.875rem;
+  transform: rotateX(20deg);
+  transform-origin: bottom;
+  min-width: 20rem;
+  z-index: 14;
+}
+
+.table-surface {
+  background: linear-gradient(#dd992d, #cd8c26);
+  bottom: 0;
+  box-shadow: 0 2.5rem 0.625rem $table-shadows;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.table-edge {
+  background-color: #ac741c;
+  height: 15px;
+  margin: 0 auto 10px auto;
+  transform: rotateX(-40deg);
+  transform-origin: top;
+}
+
+.table-leg {
+  background-color: #84570f;
+  height: 0.625rem;
+  position: absolute;
+  top: 1rem;
+  width: 1.5rem;
+
+  &:first-child {
+    left: 1.25rem;
+  }
+
+  &:last-child {
+    right: 1.25rem;
+  }
+}

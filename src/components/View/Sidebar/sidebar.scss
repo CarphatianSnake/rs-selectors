@@ -1,0 +1,129 @@
+.sidebar {
+  background-color: #221e18;
+  bottom: 0;
+  position: absolute;
+  right: -17.5rem;
+  transition: width 300ms ease-out, right 300ms ease-out;
+  top: 0;
+  width: 17.5rem;
+  z-index: 5;
+
+  @media screen and (min-width: 1024px) {
+    position: static;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 23.5rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 20rem;
+  }
+
+  &_show {
+    right: 0;
+  }
+}
+
+.levels-heading {
+  color: #fff;
+  font-size: 1.375rem;
+  font-weight: 400;
+  padding: 1.4375rem 0 0.875rem 1rem;
+  opacity: 0.4;
+}
+
+.levels {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    cursor: pointer;
+    padding: 0.3125rem 0.75rem 0.3125rem 1.375rem;
+    position: relative;
+    transition: background-color 500ms ease-out, font-weight 300ms ease-out;
+
+    &::before {
+      border: 3px solid;
+      border-color: #fff;
+      border-width: 0 3px 3px 0;
+      content: '';
+      height: 10px;
+      left: 1.25rem;
+      position: absolute;
+      opacity: 0.2;
+      top: calc(50% - 8px);
+      transform: rotate(40deg);
+      transition: border-color 300ms ease-out;
+      width: 5px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+    }
+
+    &_done {
+      &::before {
+        border-color: #4cbb4a;
+        opacity: 0.55;
+      }
+    }
+
+    &_helped {
+      &::before {
+        border-color: rgb(204, 204, 25);
+        opacity: 0.55;
+      }
+    }
+
+    &_current {
+      background-color: rgba(255, 255, 255, 0.07);
+      cursor: auto;
+      font-weight: 800;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.07);
+        }
+      }
+
+      .levels__item__number,
+      .levels__item__name {
+        color: #aaa;
+      }
+    }
+
+    &__number {
+      margin-right: 1rem;
+      opacity: 0.6;
+      padding-left: 1.375rem;
+    }
+
+    &__name {
+      color: #777;
+    }
+  }
+}
+
+.reset-progress-btn {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  display: block;
+  margin: 3rem auto 0;
+  outline: none;
+  padding: 0.5625rem 1rem 0.6875rem;
+  text-align: center;
+  transition: background-color 300ms ease-out;
+  width: 90%;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+}

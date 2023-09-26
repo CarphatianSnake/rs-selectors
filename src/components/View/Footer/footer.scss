@@ -1,0 +1,50 @@
+.footer {
+  align-items: center;
+  display: flex;
+  min-height: 6.25rem;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.rs-logo {
+  background: no-repeat center/contain url('../../../assets/img/rs_school_js.svg');
+  height: 50px;
+  transition: transform 300ms ease-out;
+  width: 100px;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.author {
+  text-align: right;
+
+  &__github {
+    color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    margin-left: 0.4rem;
+    padding-left: 1.3rem;
+    position: relative;
+    transition: color 300ms ease-out;
+
+    &::before {
+      background: no-repeat left/contain url('../../../assets/img/github.svg');
+      content: '';
+      height: 1.1rem;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 1.1rem;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+}

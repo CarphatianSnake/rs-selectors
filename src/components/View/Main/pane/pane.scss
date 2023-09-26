@@ -1,0 +1,48 @@
+@import '../../../../styles/variables.scss';
+
+.pane {
+  border-top: $pane-border;
+  border-bottom: $pane-border;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  width: 50%;
+
+  &:first-child {
+    color: #aaa;
+    border-left: $pane-border;
+
+    .pane__window {
+      background-color: #efefef;
+    }
+  }
+
+  &:last-child {
+    border-right: $pane-border;
+  }
+
+  &__header {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.15);
+    border-bottom: $pane-border;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.625rem 1rem;
+
+    &__text {
+      display: block;
+
+      &:last-child {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__window {
+    flex: 1;
+    padding: 0.625rem 0.625rem 0.625rem 2.8rem;
+    position: relative;
+  }
+}

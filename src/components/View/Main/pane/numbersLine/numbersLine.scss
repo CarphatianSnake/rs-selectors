@@ -1,0 +1,18 @@
+@import '../../../../../styles/variables.scss';
+
+.pane__window__numbers {
+  border-right: $pane-border;
+  bottom: 0;
+  left: 0;
+  padding: 0.625rem;
+  position: absolute;
+  text-align: right;
+  top: 0;
+  width: 2.5rem;
+}
+
+.pane:first-child {
+  .pane__window__numbers {
+    background-color: $light-gray-color;
+  }
+}

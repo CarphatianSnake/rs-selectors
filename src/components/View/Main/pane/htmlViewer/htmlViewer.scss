@@ -1,0 +1,24 @@
+.markup {
+  transition: opacity 300ms ease-out;
+}
+
+.pane__window > .code-wrapper {
+  margin-left: 0;
+}
+
+.code-wrapper {
+  margin-left: 1rem;
+  width: fit-content;
+
+  span {
+    transition: color 300ms ease-out;
+  }
+}
+
+.hovered span {
+  color: #fff;
+}
+
+.language-html {
+  background: transparent;
+}

@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.25rem;
+  }
+}
+
+html {
+  color: rgba(255, 255, 255, 0.3);
+  font-family: 'Exo 2', 'Lato', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+}
+
+img {
+  display: block;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+  text-decoration: none;
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+button {
+  background: transparent;
+  border: 0;
+  display: block;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.15);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transition: opacity 300ms ease-out;
+  top: 0;
+  z-index: 4;
+}
+
+.opacity-zero {
+  opacity: 0;
+}

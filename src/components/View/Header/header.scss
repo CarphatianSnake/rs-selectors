@@ -1,0 +1,18 @@
+.header {
+  align-items: center;
+  display: flex;
+  min-height: 3.125rem;
+  padding: 0 1rem;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+
+  &__icon {
+    background: no-repeat center/contain url('../../../assets/img/favicon.png');
+    height: 1.75rem;
+    margin-right: 0.5rem;
+    width: 1.75rem;
+  }
+}

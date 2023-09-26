@@ -1,0 +1,106 @@
+@import '../../../../../styles/variables.scss';
+
+.css-form {
+  display: grid;
+  grid-template-areas:
+    'input buttons'
+    'label label';
+  grid-template-columns: 1fr 3rem;
+  grid-template-rows: 3.95rem 1fr;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &__input {
+    background-color: transparent;
+    border: 0;
+    color: transparent;
+    caret-color: #000;
+    flex: 1;
+    grid-area: input;
+    line-height: 1.5;
+    margin-right: 0.5rem;
+    overflow: hidden;
+    outline: none;
+    padding: 0;
+    resize: none;
+    z-index: 2;
+  }
+
+  &__buttons-container {
+    grid-area: buttons;
+    width: 3rem;
+  }
+
+  &__button {
+    background-color: $light-gray-color;
+    border: 1px solid #999;
+    border-bottom-width: 6px;
+    color: #666;
+    cursor: pointer;
+    display: block;
+    font-size: 0.625rem;
+    height: 1.5rem;
+    outline: none;
+    padding: 0;
+    transition: border-bottom-width 150ms ease-out, background-color 300ms ease-out;
+    width: 100%;
+
+    &:active,
+    &_pressed {
+      border-bottom-width: 3px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #c2c2c2;
+      }
+    }
+
+    &:first-child {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__label {
+    grid-area: label;
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap;
+  }
+}
+
+.notes {
+  display: block;
+  margin: 0;
+}
+
+.language-css {
+  background: transparent;
+  color: #221e18;
+  content: '';
+  left: 0;
+  min-height: 1.5rem;
+  position: absolute;
+  right: 3.5rem;
+  top: 0;
+  overflow-wrap: break-word;
+  transition: transform 300ms ease-out;
+  white-space: pre-wrap;
+  z-index: 1;
+}
+
+.input_strobe {
+  background-color: rgba(62, 203, 255, 0.3);
+  animation: input 500ms infinite;
+}
+
+@keyframes input {
+  50% {
+    background-color: transparent;
+  }
+}
+
+.correct {
+  transform: translateX(-100%);
+}

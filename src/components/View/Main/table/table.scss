@@ -1,0 +1,253 @@
+@import '../../../../styles/variables.scss';
+
+.table {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+  margin: 0 auto;
+  min-height: 8.875rem;
+  outline: solid 1px transparent;
+  padding: 1rem 1rem 1.375rem;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: opacity 300ms ease-out;
+  z-index: 10;
+
+  * {
+    cursor: help;
+    position: relative;
+    transition: box-shadow 150ms ease-out, opacity 300ms ease-out;
+
+    &[data-hovered] {
+      box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  .move {
+    animation: move 300ms linear;
+    transform: translateY(-800px);
+  }
+
+  @keyframes move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-800px);
+    }
+  }
+
+  plate [data-hovered] {
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &__win-heading,
+  &__win-text {
+    cursor: auto;
+    font-weight: 400;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  &__win-heading {
+    color: #fff;
+    font-size: 1.75rem;
+  }
+
+  &__win-text {
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 0.5rem;
+  }
+}
+
+plate,
+bento {
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.1);
+  display: block;
+  height: 100px;
+  position: relative;
+  width: 100px;
+}
+
+plate {
+  background: #fff;
+  border-bottom: solid 5px $light-gray-color;
+  border-radius: 50%;
+
+  &::before {
+    border-top: 6px solid #ccc;
+    height: 65px;
+    left: calc(50% - 32px);
+    top: calc(50% - 32px);
+    width: 65px;
+  }
+}
+
+#fancy::after {
+  border: 10px solid #009ff2;
+  height: 68px;
+  left: calc(50% - 47px);
+  top: calc(50% - 44px);
+  width: 74px;
+}
+
+plate::before,
+#fancy::after {
+  border-radius: 60px;
+  content: '';
+  display: block;
+  opacity: 0.4;
+  position: absolute;
+}
+
+bento {
+  background-color: brown;
+  border: 3px solid #711c12;
+  border-width: 20px 2px;
+  position: relative;
+}
+
+apple,
+orange,
+pickle {
+  box-shadow: 0px 5px 0px $table-shadows;
+  display: block;
+  height: 60px;
+  position: relative;
+  z-index: 13;
+}
+
+plate apple,
+plate orange,
+plate pickle {
+  margin-top: 14px;
+}
+
+plate apple,
+plate orange {
+  margin-left: 20px;
+}
+
+bento apple,
+bento orange,
+bento pickle {
+  margin-top: -5px;
+}
+
+bento apple,
+bento orange {
+  margin-left: 18px;
+}
+
+apple,
+orange {
+  border-radius: 100px;
+  border-style: solid;
+  border-width: 2px 4px 15px 4px;
+  position: relative;
+  width: 60px;
+}
+
+.small {
+  border-width: 2px 4px 8px 4px;
+  height: 30px;
+  width: 30px;
+}
+
+plate .small {
+  margin-top: 35px;
+  margin-left: 35px;
+}
+
+bento .small {
+  margin-top: 10px;
+  margin-left: 32.5px;
+}
+
+apple {
+  background-color: #e41919;
+  border-color: #ab1212;
+}
+
+orange {
+  background-color: orange;
+  border-color: #bd6e07;
+}
+
+pickle {
+  background-color: #179837;
+  border: solid 2px #025a18;
+  border-radius: 30px;
+  border-width: 2px 2px 9px 2px;
+  display: inline-block;
+  width: 25px;
+}
+
+.helper {
+  background-color: #fff;
+  border-bottom: solid 2px #bbb;
+  box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.2);
+  color: #666;
+  font-size: 18px;
+  left: 50%;
+  opacity: 0;
+  outline: 1px solid transparent;
+  padding: 10px 15px 12px 15px;
+  position: absolute;
+  transform: scale(0);
+  transition: opacity 150ms ease-out, top 150ms ease-out, left 150ms ease-out, transform 150ms ease-out;
+  top: 0;
+  width: fit-content;
+  white-space: nowrap;
+  z-index: 15;
+
+  &_show {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate {
+  animation: danceStart 500ms ease-out, dance 1s infinite;
+  animation-delay: 0s, 500ms;
+  transform-origin: bottom;
+}
+
+@keyframes danceStart {
+  0% {
+    animation-timing-function: ease-in;
+    transform: skew(0deg, 0deg) scaleY(1);
+  }
+
+  40% {
+    animation-timing-function: ease-out;
+    transform: skew(0deg, 0deg) scaleY(0.9);
+  }
+
+  100% {
+    transform: skew(4deg, 0deg) scaleX(1);
+  }
+}
+
+@keyframes dance {
+  0% {
+    transform: skew(4deg, 0deg) scaleX(1);
+  }
+
+  10% {
+    transform: skew(1deg, 0deg) scaleY(0.9);
+  }
+
+  50% {
+    transform: skew(-4deg, 0deg) scaleX(1);
+  }
+
+  60% {
+    transform: skew(-1deg, 0deg) scaleY(0.9);
+  }
+
+  100% {
+    transform: skew(4deg, 0deg) scaleX(1);
+  }
+}

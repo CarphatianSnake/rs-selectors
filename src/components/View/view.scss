@@ -1,0 +1,50 @@
+.app {
+  background: radial-gradient(circle at 20% 40%, #3e392f, #221e17);
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &_block-scroll {
+    overflow-y: hidden;
+  }
+}
+
+.modal-button {
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  height: 0.75rem;
+  right: 0.65rem;
+  position: absolute;
+  top: 1rem;
+  transform: rotate(-225deg);
+  transition: transform 300ms ease-out, border-color 300ms ease-out;
+  width: 0.75rem;
+  z-index: 10;
+
+  &_show {
+    transform: rotate(-45deg);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+}
